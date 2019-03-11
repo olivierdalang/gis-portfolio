@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<style>
+body{
+  max-width: 50em;
+  margin: 2em auto !important;
+  /* border: solid 1px; */
+  box-shadow: 0 0.5em 1em 0.25em rgba(0,0,0,0.15);
+  padding: 1em 3em;
+}
+img{
+  max-height: 48em;
+  box-shadow: 0 0.25em 0.5em 0.125em rgba(0,0,0,0.15);
+}
+h1, h2{
+  border-bottom: solid 1px;
+}
+h2{
+  margin-top: 2em;
+}
+</style>
+<h1 id="olivier-dalang-selected-work">Olivier Dalang / Selected work</h1>
+<p>This portfolio presents some of my previous GIS work.</p>
+<h2 id="natural-disaster-impact-assessment-workflow">Natural disaster impact assessment workflow</h2>
+<p><strong>Client</strong> : Pacific Community<br>
+<strong>Country</strong> : Fiji<br>
+<strong>Tools</strong> : QGIS, processing models, python plugins<br>
+<strong>Date</strong> : 2018</p>
+<p><img src="SPC-natural-disaster.png" alt="SPC-natural-disaster.png"><br>
+<em>Example of an automatically generated reinstallement cost analysis</em></p>
+<p>SPC regularly assists Pacific Countries in conducting damage assessments, both before disasters, based on scenarios, to inform preparedness strategies, and post diaster, to inform response.</p>
+<p>This project aimed to create workflows to generate such assessments using QGIS. It consisted of a couple of QGIS processing workflows using some custom python algorithms.</p>
+<p>Non-technical users were shown how to run the algorithms by just picking the hazard and the exposure layer, to automically generate PDFs.</p>
+<p>Intermediate users were shown how to change the outputs by modifing styles or layouts in QGIS.</p>
+<p>Advanced users were shown how to create custom analysis by changing the processing models.</p>
+<h2 id="geonode-hosting">Geonode hosting</h2>
+<p><strong>Client</strong> : Pacific Community<br>
+<strong>Country</strong> : Fiji<br>
+<strong>Tools</strong> : Geonode<br>
+<strong>Date</strong> : 2017-2018<br>
+<strong>Links</strong> : https://github.com/GeoNode/geonode/tree/master/scripts/spcgeonode</p>
+<p><img src="SPC-geonode.png" alt="SPC-geonode.png"><br>
+<em>Customized Geonode deployment for coordination after cyclone Gita in Tonga</em></p>
+<p>SPC manages several geographical open data portals based on Geonode. Each of those portals was deployed independetly, leading each time to the same technical challenges. The goal of this project was to create a production-ready deployement method for Geonode, allowing to very easily deploy new Geonode data portals.</p>
+<p>This method has been contributed back to the main Geonode repository and can now be used to deploy new instances.</p>
+<h2 id="urbadatabase">UrbaDatabase</h2>
+<p><strong>Client</strong> : UrbaSEN<br>
+<strong>Country</strong> : Senegal<br>
+<strong>Tools</strong> : Django, QGIS<br>
+<strong>Date</strong> : 2016<br>
+<strong>Visuals</strong> : screnshots of UrbaDatabase, screnshots of AOF</p>
+<p><img src="UrbaSEN-Urbadatabase-1.PNG" alt="UrbaSEN-Urbadatabase-1.PNG"></p>
+<p><em>Main view of the Django based app</em></p>
+<p><img src="UrbaSEN-Urbadatabase-3.PNG" alt="UrbaSEN-Urbadatabase-3.PNG"></p>
+<p><em>Feature form : attach documents</em></p>
+<p><img src="UrbaSEN-Urbadatabase-4.PNG" alt="UrbaSEN-Urbadatabase-4.PNG"><br>
+<em>Generated Occupation Certificate</em></p>
+<p>UrbaSEN is helping the Senegalese Federation of Inhabitants to document informal land ownership in flooded areas. With the local authorities, UrbaSEN is delivering Informal Occupation Certificates.</p>
+<p>UrbaDatabase is a Django (Python) based application that allows to collect data in the field, to issue and validate Informal Occupation Certificates. Those certificates contain an automatically generated map showing the land lot.</p>
+<h2 id="senegal-flying-lab">Senegal Flying Lab</h2>
+<p><strong>Client</strong> : UrbaSEN<br>
+<strong>Country</strong> : Senegal<br>
+<strong>Tools</strong> : Pix4D<br>
+<strong>Date</strong> : 2016<br>
+<strong>Links</strong> : https://urbasen.org/projets/senegal-flying-lab</p>
+<p><img src="UrbaSEN-FlyingLab-1b.jpg" alt="UrbaSEN-FlyingLab-1b.jpg"><br>
+<em>Extract of the generated base maps</em></p>
+<p><img src="UrbaSEN-FlyingLab-2.jpg" alt="UrbaSEN-FlyingLab-2.jpg"><br>
+<em>Flying the drone</em></p>
+<p>In partnership with WeRobotics, UrbaSEN acquired skills in drone based mapping to support the aforementionned project.</p>
+<p>The project consisted of training the local team in piloting drones, processing the imagery, loading and analysing it.</p>
+<h2 id="dtk-local-urban-plan">DTK local urban plan</h2>
+<p><strong>Client</strong> : UrbaMonde,<br>
+<strong>Country</strong> : Senegal<br>
+<strong>Tools</strong> : QGIS<br>
+<strong>Date</strong> : 2015</p>
+<p><img src="UrbaSEN-carto-1.jpg" alt="UrbaSEN-carto-1.jpg"><br>
+<em>Plan d'Urbanisme de Détail</em></p>
+<p>UrbaMonde, in partnership with the local population of Djiddah Thiaroye Kao, the local authorities, and the swiss urban planning firm UrbaPlan, realized the first participartory <em>Plan d'Urbanisme de Détail</em> of Senegal.</p>
+<p>The contribution on this project was on the planning process and on the realisation of the final official maps using QGIS.</p>
+<h2 id="dhlab---venice-time-machine">DHLab - Venice Time Machine</h2>
+<p><strong>Client</strong> : DHLab / EPFL<br>
+<strong>Country</strong> : Switzerland<br>
+<strong>Tools</strong> : OpenLayers, Virtuoso, python<br>
+<strong>Date</strong> : 2015</p>
+<p><img src="EPFL-Dhlab-1.PNG" alt="EPFL-Dhlab-1.PNG"><br>
+<em>Web view of the data</em></p>
+<p>The Digital Humanities Lab at EPFL is conducting a great project on historical data from the states archives of Venice.</p>
+<p>The contribution on this project was the creation of editing interfaces and web views for the geographical data retrieved from those archives.</p>
+<h2 id="dhlab---visualising-future-cities-course">DHLab - Visualising future cities course</h2>
+<p><strong>Client</strong> : DHLab / EPFL<br>
+<strong>Country</strong> : Switzerland<br>
+<strong>Tools</strong> : OpenLayers, Virtuoso, python<br>
+<strong>Date</strong> : 2014</p>
+<p><img src="EPFL-UEE_Page_06.png" alt="EPFL-UEE_Page_06.png"><br>
+<em>Network analysis of historical network of venice (Student's work)</em></p>
+<p>The Digital Humanities Lab at EPFL was contributing to a course on urban data visualization. Amongst other things, students where teached how to conduct network analysis using QGIS.</p>
+<h2 id="open-source-contributions">Open-Source contributions</h2>
+<p>Own QGIS plugins (Python)</p>
+<ul>
+<li><a href="https://github.com/olivierdalang/CadInput">https://github.com/olivierdalang/CadInput</a></li>
+<li><a href="https://github.com/olivierdalang/VectorBender">https://github.com/olivierdalang/VectorBender</a></li>
+<li><a href="https://github.com/olivierdalang/RasterBender">https://github.com/olivierdalang/RasterBender</a></li>
+<li><a href="https://github.com/olivierdalang/liveStats">https://github.com/olivierdalang/liveStats</a></li>
+<li><a href="https://github.com/olivierdalang/layerCombinations">https://github.com/olivierdalang/layerCombinations</a></li>
+</ul>
+<p>Contributions to other QGIS plugins (Python)</p>
+<ul>
+<li><a href="https://github.com/minorua/Qgis2threejs/commits?author=olivierdalang">https://github.com/minorua/Qgis2threejs/commits?author=olivierdalang</a></li>
+<li><a href="https://github.com/nextgis/QTiles/commits?author=olivierdalang">https://github.com/nextgis/QTiles/commits?author=olivierdalang</a></li>
+</ul>
+<p>Contributions to QGIS core (c++)</p>
+<ul>
+<li><a href="https://github.com/qgis/QGIS/commits?author=olivierdalang">https://github.com/qgis/QGIS/commits?author=olivierdalang</a></li>
+</ul>
+<p>Contributions to Geonode (Django, Python)</p>
+<ul>
+<li><a href="https://github.com/Geonode/Geonode/commits?author=olivierdalang">https://github.com/Geonode/Geonode/commits?author=olivierdalang</a></li>
+</ul>
+<p>Contributions to other geospatial tools (Javascript)</p>
+<ul>
+<li><a href="https://github.com/walkermatt/ol3-layerswitcher/commits?author=olivierdalang">https://github.com/walkermatt/ol3-layerswitcher/commits?author=olivierdalang</a></li>
+</ul>
+
+</body>
+</html>
